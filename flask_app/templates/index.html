@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Breast Cancer Prediction</title>
+</head>
+<body>
+  <h1>Breast Cancer Prediction App</h1>
+  <form action="/predict" method="post">
+    <label>Clump Thickness:</label>
+    <input type="number" name="Clump_thickness" min="1" max="10" required><br>
+
+    <label>Uniformity of Cell Size:</label>
+    <input type="number" name="Uniformity_of_cell_size" min="1" max="10" required><br>
+
+    <label>Uniformity of Cell Shape:</label>
+    <input type="number" name="Uniformity_of_cell_shape" min="1" max="10" required><br>
+
+    <label>Marginal Adhesion:</label>
+    <input type="number" name="Marginal_adhesion" min="1" max="10" required><br>
+
+    <label>Single Epithelial Cell Size:</label>
+    <input type="number" name="Single_epithelial_cell_size" min="1" max="10" required><br>
+
+    <label>Bare Nuclei:</label>
+    <input type="number" name="Bare_nuclei" min="1" max="10" required><br>
+
+    <label>Bland Chromatin:</label>
+    <input type="number" name="Bland_chromatin" min="1" max="10" required><br>
+
+    <label>Normal Nucleoli:</label>
+    <input type="number" name="Normal_nucleoli" min="1" max="10" required><br>
+
+    <label>Mitoses:</label>
+    <input type="number" name="Mitoses" min="1" max="10" required><br>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if result is defined %}
+    <p><strong>Prediction:</strong> {{ "Malignant (1)" if result == 1 else "Benign (0)" }}</p>
+  {% endif %}
+</body>
+</html>
