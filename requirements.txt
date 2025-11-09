@@ -1,6 +1,8 @@
 Flask==3.0.0
 gunicorn==21.2.0
-scikit-learn==1.5.0
-numpy==1.26.0
-pandas==2.2.2
+scikit-learn==1.2.2
+numpy==1.23.5
+pandas==1.5.3
 blinker==1.6.2
+setuptools==59.8.0
+wheel==0.38.4
