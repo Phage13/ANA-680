@@ -25,5 +25,5 @@ jobs:
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: breast-cancer-flask-demo
-          heroku_email: your-email@example.com
+          heroku_email: r.neighbor2608@student.nu.edu
           dontautocreate: true
