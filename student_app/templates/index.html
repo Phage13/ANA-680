@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Student Race/Ethnicity Predictor</title>
+</head>
+<body>
+  <h1>Predict Race/Ethnicity</h1>
+  <form action="/predict" method="post">
+    <label>Math score:
+      <input type="number" name="math_score" required>
+    </label><br>
+    <label>Reading score:
+      <input type="number" name="reading_score" required>
+    </label><br>
+    <label>Writing score:
+      <input type="number" name="writing_score" required>
+    </label><br>
+    <button type="submit">Predict</button>
+  </form>
+  <p>Prediction: {{ result if result else "—" }}</p>
+</body>
+</html>

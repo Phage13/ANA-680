@@ -1,12 +1,16 @@
-name: Deploy to Heroku
+name: CI/CD - Breast Cancer App
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    paths:
+      - 'flask_app/**'
+      - 'requirements.txt'
+      - 'Procfile'
+      - '.github/workflows/cancer-ci.yml'
 
 jobs:
-  deploy:
+  deploy-cancer:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,15 +19,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'   # safer version with good wheel support
+          python-version: '3.10'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Deploy to Heroku
+      - name: Deploy to Heroku (Cancer App)
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: breast-cancer-flask-demo
-          heroku_email: r.neighbor2608@student.nu.edu
+          heroku_app_name: ${{ secrets.HEROKU_CANCER_APP }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
           dontautocreate: true
