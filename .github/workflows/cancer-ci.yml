@@ -6,15 +6,19 @@ on:
     paths:
       - 'flask_app/**'
       - 'requirements.txt'
-      - 'Procfile'
+      - 'Procfile.cancer'
       - '.github/workflows/cancer-ci.yml'
 
 jobs:
   deploy-cancer:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Use cancer Procfile
+        run: cp Procfile.cancer Procfile
 
       - name: Set up Python
         uses: actions/setup-python@v4
