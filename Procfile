@@ -1,3 +1,3 @@
 
-web: gunicorn ANA_680_flask_app.app:app
+web: gunicorn flask_app.app:app
 
